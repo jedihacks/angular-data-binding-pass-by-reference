@@ -1,0 +1,16 @@
+.person {
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid rgb(149, 148, 148);
+    background-color: #b5f4ae;
+    width: 100px;
+    height: 50px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }

@@ -23,7 +23,7 @@
     <!-- PARENT -->
     <div class="card-container">
       <button class="card card-small"  tabindex="0">
-        <app-parent [(_person)]="originalPerson"> </app-parent>
+        <app-people-builder [(_originalArrayOfPeople)]="originalArrayOfPeople"> </app-people-builder>
       </button>
     </div>
 
@@ -49,7 +49,7 @@
     <!-- ARRAY-EXAMPLE -->
     <div class="card-container">
       <button class="card card-small"  tabindex="0">
-        <app-array-example [(_people)]="arrayOfPeople"> </app-array-example>
+        <app-array-example [(_people)]="originalArrayOfPeople"> </app-array-example>
       </button>
     </div>
   </div>

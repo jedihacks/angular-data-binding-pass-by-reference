@@ -31,9 +31,8 @@ export class ArrayExampleComponent implements OnInit {
     tmpPerson = this._people.find(tmp => tmp.name === _person.name);
     if (tmpPerson) {
       console.log('tmpPerson found', tmpPerson);
-      tmpPerson.name = 'Changed Single Person by FIND';
+      tmpPerson.name = 'CHANGED BY .FIND';
     }
-    
   }
 
 }
