@@ -18,31 +18,35 @@
 </div>
 
 <div class="content" role="main">
-
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
-    <app-parent> </app-parent>
-
-  </div>
+  <!-- Show the Parent-->
+  <h2>Parent</h2>
+    <!-- PARENT -->
+    <div class="card-container">
+      <button class="card card-small"  tabindex="0">
+        <app-parent> </app-parent>
+      </button>
+    </div>
 
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
+  <h2>Children</h2>
+  <p>The children receive data from the parent through two-way data binding</p>
 
   <div class="card-container">
+     <!-- CHILD-A -->
+    <div class="card-container">
+      <button class="card card-small"  tabindex="0">
+        <app-child-a> </app-child-a>
+      </button>
+    </div>
 
-
+      <!-- CHILD-B -->
+      <div class="card-container">
+        <button class="card card-small"  tabindex="0">
+          <app-child-a> </app-child-a>
+        </button>
+      </div>
   </div>
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>New Component</span>
-    </button>
-
-  </div>
+ 
 
 
   <!-- Footer -->
