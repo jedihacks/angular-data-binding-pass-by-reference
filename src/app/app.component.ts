@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from './data-models/person.class';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-two-way-binding-pass-by-reference';
+  public originalPerson: Person = new Person('Original Name');
+
+  ngOnInit() {
+    console.log ('App.component', 'ngOnInit(), Person = ', this.originalPerson.name);
+  }
 }

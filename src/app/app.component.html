@@ -23,7 +23,7 @@
     <!-- PARENT -->
     <div class="card-container">
       <button class="card card-small"  tabindex="0">
-        <app-parent> </app-parent>
+        <app-parent [(_person)]="originalPerson"> </app-parent>
       </button>
     </div>
 
@@ -35,14 +35,14 @@
      <!-- CHILD-A -->
     <div class="card-container">
       <button class="card card-small"  tabindex="0">
-        <app-child-a> </app-child-a>
+        <app-child-a [(_person)]="originalPerson"> </app-child-a>
       </button>
     </div>
 
       <!-- CHILD-B -->
       <div class="card-container">
         <button class="card card-small"  tabindex="0">
-          <app-child-a> </app-child-a>
+          <app-child-b [(_person)]="originalPerson"> </app-child-b>
         </button>
       </div>
   </div>
