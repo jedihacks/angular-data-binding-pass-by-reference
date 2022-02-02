@@ -15,7 +15,7 @@ export class PersonComponent implements OnInit {
   }
 
   changeSinglePerson() {
-    this._person.name = "SELF NAME";
+    this._person.changeSelf();
   }
 
 }

@@ -6,8 +6,14 @@ export class Person {
         console.log('Constructing Person');
     }
 
+    public static async build(_name: string) {
+        const tmpPerson = new Person(_name);
+        tmpPerson.name = 'modified in build';
+        return tmpPerson;
+    }
+
     // * The Person is born!
-    sayHello() {
-        return 'Hello world!  My name is: ' + this.name;
+    changeSelf() {
+        this.name = "SELF NAME";
     }
 }

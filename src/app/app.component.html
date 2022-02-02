@@ -33,14 +33,21 @@
 
   <app-people-builder [(_originalArrayOfPeople)]="originalArrayOfPeople" [(_newArrayRef)]="newArrayRef"> </app-people-builder>
 
-  <div class="card-container">
-     <!-- CHILD-A -->
+  
+     <!-- PERSON #1 in ARRAY -->
     <div class="card-container">
       <button class="card card-small"  tabindex="0">
         <app-child-component [(_person)]="originalPerson"> </app-child-component>
       </button>
     </div>
-  </div>
+
+      <!-- PERSON #1 in ARRAY -->
+      <div class="card-container">
+        <button class="card card-small"  tabindex="0">
+          <app-child-component *ngIf="originalArrayOfPeople[1]" [(_person)]="originalArrayOfPeople[1]"> </app-child-component>
+        </button>
+      </div>
+
 
   <!-- CLOUDS DECORATION FROM ANGULAR -->
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">

@@ -27,6 +27,7 @@ export class ArrayExampleComponent implements OnInit {
   }
 
   changeSinglePerson(_person: Person) {
+    console.log('About to change:', _person.name);
     let tmpPerson= null;
     tmpPerson = this._people.find(tmp => tmp.name === _person.name);
     if (tmpPerson) {

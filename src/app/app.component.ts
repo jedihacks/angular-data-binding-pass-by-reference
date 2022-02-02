@@ -8,15 +8,13 @@ import { Person } from './data-models/person.class';
 })
 export class AppComponent {
   public originalPerson: Person = new Person('Original');
-  public originalArrayOfPeople: Person[] = [];
-  public newArrayRef: Person[] = [];
+  public originalArrayOfPeople: Person[] = []; // * Create in the App Component
+  public newArrayRef: Person[] = []; // * Reference To be modified by another component
 
-  ngOnInit() {
-    console.log ('App.component', 'ngOnInit(), Person = ', this.originalPerson.name);
-
+  async ngOnInit() {
     this.originalArrayOfPeople.push(this.originalPerson);
-    this.originalArrayOfPeople.push(new Person('Original #2'));
-    this.originalArrayOfPeople.push(new Person('Original #3'));
-    this.originalArrayOfPeople.push(new Person('Original #4'));
+    this.originalArrayOfPeople.push(await Person.build('Original #2'));
+    console.warn ('App.component', 'ngOnInit(), this.originalArrayOfPeople = ', this.originalArrayOfPeople);
+    console.warn ('App.component', 'ngOnInit(), newArrayRef = ', this.newArrayRef);
   }
 }
