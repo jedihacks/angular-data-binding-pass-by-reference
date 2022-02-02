@@ -8,27 +8,36 @@ import { Person } from 'src/app/data-models/person.class';
 })
 export class PeopleBuilderComponent implements OnInit {
   public localArrayOfPeople: Person[] = [];
-  @Input() _newArrayRef: Person[] = [];
-  @Output() _newArrayRefChange = new EventEmitter<Person[]>();
+
   @Input() _originalArrayOfPeople: Person[] = [];
   @Output() _originalArrayOfPeopleChange = new EventEmitter<Person[]>();
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.localArrayOfPeople.push(new Person('NEW #' + this.localArrayOfPeople.length));
+  async ngOnInit() {
+    this.localArrayOfPeople.push(await Person.build('NEW #' + this.localArrayOfPeople.length));
   }
 
-  addNewPersonToOriginal() {
-    this._newArrayRef.push(new Person('NEW ' + this._newArrayRef.length));
+  async addNewPersonToOriginal() {
+    this._originalArrayOfPeople.push(await Person.build('NEW ' + this._originalArrayOfPeople.length));
   }
 
-  addNewPersonToLocal() {
-    this.localArrayOfPeople.push(new Person('NEW ' + this.localArrayOfPeople.length));
+  async addNewPersonToLocal() {
+    this.localArrayOfPeople.push(await Person.build('NEW ' + this.localArrayOfPeople.length));
   }
 
   assignLocalToRef(){
-    this._newArrayRef = this.localArrayOfPeople;
+    console.warn('originalArrayofPeople:', this._originalArrayOfPeople);
+    console.warn('localArrayOfPeople:', this._originalArrayOfPeople);
+
+    // The variable IN People-Builder that is NAMED originalArrayOfPeople permamently has it's own memory location
+    // So, when we set originalArray = this.localArray, we are NOT changing the original memory location. 
+    // We are simply swapping the reference value in THIS function.
+    this._originalArrayOfPeople = this.localArrayOfPeople;
+
+    // ACTION ITEM - NEED TO SEARCH FOR ALL INSTANCES OF GAMESTATE = OTHER GAME STATE, and REMOVE IT.
+    console.warn('originalArrayofPeople:', this._originalArrayOfPeople);
+    console.warn('localArrayOfPeople:', this._originalArrayOfPeople);
   }
 
 }

@@ -25,28 +25,12 @@
         <app-array-example [(_people)]="originalArrayOfPeople"></app-array-example>
     </div>
 
-    <div class="card-container">
-      <div class="card card-small" tabindex="0">
-        <h4>New Array Ref </h4> 
-        <app-array-example [(_people)]="newArrayRef"></app-array-example>
+  <app-people-builder [(_originalArrayOfPeople)]="originalArrayOfPeople"> </app-people-builder>
+
+    <!-- PERSON #1 in ARRAY -->
+    <div class="card-container card card-small" *ngFor="let tmp of originalArrayOfPeople; index as i">
+      <app-child-component [(_person)]="originalArrayOfPeople[i]"> </app-child-component>
     </div>
-
-  <app-people-builder [(_originalArrayOfPeople)]="originalArrayOfPeople" [(_newArrayRef)]="newArrayRef"> </app-people-builder>
-
-  
-     <!-- PERSON #1 in ARRAY -->
-    <div class="card-container">
-      <button class="card card-small"  tabindex="0">
-        <app-child-component [(_person)]="originalPerson"> </app-child-component>
-      </button>
-    </div>
-
-      <!-- PERSON #1 in ARRAY -->
-      <div class="card-container">
-        <button class="card card-small"  tabindex="0">
-          <app-child-component *ngIf="originalArrayOfPeople[1]" [(_person)]="originalArrayOfPeople[1]"> </app-child-component>
-        </button>
-      </div>
 
 
   <!-- CLOUDS DECORATION FROM ANGULAR -->

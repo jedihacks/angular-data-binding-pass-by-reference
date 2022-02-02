@@ -9,12 +9,12 @@ import { Person } from './data-models/person.class';
 export class AppComponent {
   public originalPerson: Person = new Person('Original');
   public originalArrayOfPeople: Person[] = []; // * Create in the App Component
-  public newArrayRef: Person[] = []; // * Reference To be modified by another component
+  // public localToBuilderArrayRef: Person[] = []; // * Reference To be modified by another component
 
   async ngOnInit() {
     this.originalArrayOfPeople.push(this.originalPerson);
     this.originalArrayOfPeople.push(await Person.build('Original #2'));
     console.warn ('App.component', 'ngOnInit(), this.originalArrayOfPeople = ', this.originalArrayOfPeople);
-    console.warn ('App.component', 'ngOnInit(), newArrayRef = ', this.newArrayRef);
+    // console.warn ('App.component', 'ngOnInit(), newArrayRef = ', this.localToBuilderArrayRef);
   }
 }
