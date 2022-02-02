@@ -7,7 +7,7 @@ import { Person } from './data-models/person.class';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public originalPerson: Person = new Person('Original Name');
+  public originalPerson: Person = new Person('Original');
   public originalArrayOfPeople: Person[] = [];
 
   ngOnInit() {

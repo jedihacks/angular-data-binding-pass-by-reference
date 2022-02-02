@@ -1,8 +1,11 @@
 <h3>People Builder</h3>
-
-<h4>_originalArrayOfPeople: </h4>
-<app-array-example [(_people)]="_originalArrayOfPeople"></app-array-example>
-
+<span> 
+    <h4>Original Array </h4> 
+    <app-array-example [(_people)]="_originalArrayOfPeople"></app-array-example>
+</span>
 <br>
-<h4>NEW Array of People</h4>
+<h4>NEW Array</h4>
 <app-array-example [(_people)]="newArrayOfPeople"></app-array-example>
+
+
+<button (click)="addNewPersonToOriginal()">Add New Person To Original</button>

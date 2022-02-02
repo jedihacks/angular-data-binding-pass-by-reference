@@ -14,9 +14,15 @@ export class PeopleBuilderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.newArrayOfPeople.push(new Person('NEW PERSON #2'));
-    this.newArrayOfPeople.push(new Person('NEW PERSON #3'));
-    this.newArrayOfPeople.push(new Person('NEW PERSON #4'));
+    this.newArrayOfPeople.push(new Person('NEW #' + this.newArrayOfPeople.length));
+  }
+
+  addNewPersonToOriginal() {
+    this.newArrayOfPeople.push(new Person('NEW ' + this.newArrayOfPeople.length));
+  }
+
+  assignNewObject(){
+
   }
 
 }

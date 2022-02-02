@@ -1,11 +1,8 @@
-<h3>array-example</h3>
-
 <div class="flex-container">
     <div *ngFor="let tmpPerson of _people">
         <app-person [_person]="tmpPerson"></app-person> 
         <button (click)="changeSinglePerson(tmpPerson)">Change by .FIND</button>
     </div>
+    <button (click)="changeAllNames()"> Change All People</button>
 </div>
-
 <br>
-<button (click)="changeAllNames()"> Change All People</button>
