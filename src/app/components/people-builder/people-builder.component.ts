@@ -7,22 +7,28 @@ import { Person } from 'src/app/data-models/person.class';
   styleUrls: ['./people-builder.component.scss']
 })
 export class PeopleBuilderComponent implements OnInit {
-  public newArrayOfPeople: Person[] = [];
+  public localArrayOfPeople: Person[] = [];
+  @Input() _newArrayRef: Person[] = [];
+  @Output() _newArrayRefChange = new EventEmitter<Person[]>();
   @Input() _originalArrayOfPeople: Person[] = [];
   @Output() _originalArrayOfPeopleChange = new EventEmitter<Person[]>();
 
   constructor() { }
 
   ngOnInit(): void {
-    this.newArrayOfPeople.push(new Person('NEW #' + this.newArrayOfPeople.length));
+    this.localArrayOfPeople.push(new Person('NEW #' + this.localArrayOfPeople.length));
   }
 
   addNewPersonToOriginal() {
-    this.newArrayOfPeople.push(new Person('NEW ' + this.newArrayOfPeople.length));
+    this._newArrayRef.push(new Person('NEW ' + this._newArrayRef.length));
   }
 
-  assignNewObject(){
+  addNewPersonToLocal() {
+    this.localArrayOfPeople.push(new Person('NEW ' + this.localArrayOfPeople.length));
+  }
 
+  assignLocalToRef(){
+    this._newArrayRef = this.localArrayOfPeople;
   }
 
 }

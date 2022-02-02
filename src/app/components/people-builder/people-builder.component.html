@@ -1,11 +1,6 @@
 <h3>People Builder</h3>
-<span> 
-    <h4>Original Array </h4> 
-    <app-array-example [(_people)]="_originalArrayOfPeople"></app-array-example>
-</span>
-<br>
-<h4>NEW Array</h4>
-<app-array-example [(_people)]="newArrayOfPeople"></app-array-example>
-
-
 <button (click)="addNewPersonToOriginal()">Add New Person To Original</button>
+<button (click)="addNewPersonToLocal()">Add New Person LOCAL </button>
+<button (click)="assignLocalToRef()">Assign LOCAL to REF </button>
+
+<app-array-example [(_people)]="localArrayOfPeople"></app-array-example>
