@@ -1,0 +1,8 @@
+<h3>array-example works!</h3>
+
+<div *ngFor="let tmpPerson of _people">
+    <span>{{tmpPerson.name}} <button (click)="changeSinglePerson(tmpPerson)"> change person</button></span>
+</div>
+
+<br>
+<button (click)="changeAllNames()"> Change All People</button>
